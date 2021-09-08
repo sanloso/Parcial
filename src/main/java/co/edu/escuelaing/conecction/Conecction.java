@@ -8,14 +8,13 @@ import java.net.URL;
 
 public class Conecction {
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=";
-    private static final String API_KEY = "&apikey=Q1QZFVJQ21K7C6XM";
+    private static final String GET_URL = "https://api.openweathermap.org/data/2.5/weather?q=";
+    private static final String API_KEY = "b9a51334e335723c69229ad6037bc26b";
 
-    public static <JSONObject> String getData(String ticker) throws IOException {
+    public static <JSONObject> String getData(String city) throws IOException {
 
         String responseSTR = "None";
-        String FINAL_URL = GET_URL+ticker+API_KEY;
-//        System.out.println(FINAL_URL);
+        String FINAL_URL = GET_URL+city+"&appid="+API_KEY;
         URL obj = new URL(FINAL_URL);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
