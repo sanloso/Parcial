@@ -14,7 +14,8 @@ public class Client {
         PrintWriter out = null;
         BufferedReader in = null;
         try {
-            clientSocket = new Socket("127.0.0.1", 3500);
+//            clientSocket = new Socket("127.0.0.1", 3500);
+            clientSocket = new Socket("https://git.heroku.com/arepweather.git", -1);
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(
                     clientSocket.getInputStream()));
